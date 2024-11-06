@@ -1,3 +1,4 @@
+import { Nav } from "./Nav";
 import styles from "./styles.module.scss";
 
 export const Header = () => {
@@ -5,6 +6,7 @@ export const Header = () => {
     <header className={styles.header}>
       <div className="container">
         <h1 className="title one">Hardware E-Commerce</h1>
+        <Nav />
       </div>
     </header>
   );
