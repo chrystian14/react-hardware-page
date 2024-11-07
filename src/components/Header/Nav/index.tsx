@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import { ModalContext } from "../../../providers/ModalContext";
 import { BagIcon } from "../../icons/BagIcon";
 import styles from "./styles.module.scss";
+import { BagContext } from "../../../providers/BagContext";
 
 export const Nav = () => {
+  const { openModal } = useContext(ModalContext);
+  const { bagItems } = useContext(BagContext);
+
   return (
     <nav>
       <ul className={styles.navLinks}>
@@ -14,10 +20,10 @@ export const Nav = () => {
         </li>
 
         <li className={styles.navLink}>
-          <button>
+          <button onClick={openModal}>
             <a>
               <BagIcon />
-              <span>12</span>
+              <span>{bagItems.length}</span>
             </a>
           </button>
         </li>

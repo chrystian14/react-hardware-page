@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import type { Product } from "..";
+import { BagContext } from "../../../../../providers/BagContext";
 import { BagIcon } from "../../../../icons/BagIcon";
 import styles from "./styles.module.scss";
 
@@ -7,6 +9,8 @@ type ProductCardProps = {
 };
 
 export const ProductCard = ({ product }: ProductCardProps) => {
+  const { addToBag } = useContext(BagContext);
+
   return (
     <li className={styles.productCard}>
       <figure>
@@ -46,7 +50,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           </strong>
         </small>
 
-        <button className="btn lg fullWidth">
+        <button className="btn lg fullWidth" onClick={() => addToBag(product)}>
           <BagIcon />
           Adicionar a sacola
         </button>
