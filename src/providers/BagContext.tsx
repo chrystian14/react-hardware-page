@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import type { Product } from "../components/sections/ProductSection/ProductList";
 
-type BagItem = Product & { quantity: number };
+export type BagItem = Product & { quantity: number };
 
 interface IBagContext {
   bagItems: BagItem[];

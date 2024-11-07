@@ -1,12 +1,12 @@
+import { useContext } from "react";
 import styles from "./styles.module.scss";
 import { FaRegTrashCan, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { BagContext, type BagItem } from "../../../../../providers/BagContext";
 
-export const BagCard = ({
-  bagItem,
-  removeFromBag,
-  addToBag,
-  removeItemQuantityFromBag,
-}) => {
+export const BagCard = ({ bagItem }: { bagItem: BagItem }) => {
+  const { removeFromBag, removeItemQuantityFromBag, addToBag } =
+    useContext(BagContext);
+
   return (
     <li className={styles.bagCard}>
       <figure>
@@ -20,7 +20,7 @@ export const BagCard = ({
           <p className="text sm">Quantidade:</p>
           <button
             disabled={bagItem.quantity === 1}
-            onClick={() => removeItemQuantityFromBag(bagItem.id)}
+            onClick={() => removeItemQuantityFromBag(bagItem.id, 1)}
           >
             <FaChevronLeft />
           </button>

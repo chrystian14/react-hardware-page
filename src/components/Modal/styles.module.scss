@@ -9,20 +9,18 @@
   inset: 0;
   padding-inline: 1rem;
   background: rgba(0, 0, 0, 0.5);
-  // top / bottom / right / left
 }
 
 .modalBox {
   width: 100%;
   max-width: 800px;
-  // padding: 1rem;
   border: 2px solid var(--color-blue-600);
   background-color: var(--gray-800);
 }
 
-.bagDetails {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
-}
+// .bagDetails {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 1rem;
+//   gap: 1rem;
+// }

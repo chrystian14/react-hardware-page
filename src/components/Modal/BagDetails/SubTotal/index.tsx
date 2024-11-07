@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BagContext } from "../../../providers/BagContext";
+import { BagContext } from "../../../../providers/BagContext";
 import styles from "./styles.module.scss";
 
 export const SubTotal = () => {
