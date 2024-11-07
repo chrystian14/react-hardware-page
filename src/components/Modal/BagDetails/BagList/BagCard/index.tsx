@@ -2,6 +2,7 @@ import { useContext } from "react";
 import styles from "./styles.module.scss";
 import { FaRegTrashCan, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { BagContext, type BagItem } from "../../../../../providers/BagContext";
+import { formatCurrencyBRL } from "../../../../../utils/currency";
 
 export const BagCard = ({ bagItem }: { bagItem: BagItem }) => {
   const { removeFromBag, removeItemQuantityFromBag, addToBag } =
@@ -10,7 +11,10 @@ export const BagCard = ({ bagItem }: { bagItem: BagItem }) => {
   return (
     <li className={styles.bagCard}>
       <figure>
-        <img src={bagItem.img} alt="" />
+        <img
+          src={bagItem.img}
+          alt={`Imagem do Produto adicionado a mochila: ${bagItem.name}`}
+        />
       </figure>
 
       <div className={styles.bagItemDetails}>
@@ -34,12 +38,7 @@ export const BagCard = ({ bagItem }: { bagItem: BagItem }) => {
       </div>
 
       <span className="text">
-        <strong>
-          {(bagItem.price * bagItem.quantity).toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </strong>
+        <strong>{formatCurrencyBRL(bagItem.price * bagItem.quantity)}</strong>
       </span>
 
       <button onClick={() => removeFromBag(bagItem.id)}>

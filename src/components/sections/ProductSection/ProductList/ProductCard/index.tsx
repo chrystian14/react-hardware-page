@@ -3,6 +3,7 @@ import type { Product } from "..";
 import { BagContext } from "../../../../../providers/BagContext";
 import { BagIcon } from "../../../../icons/BagIcon";
 import styles from "./styles.module.scss";
+import { formatCurrencyBRL } from "../../../../../utils/currency";
 
 type ProductCardProps = {
   product: Product;
@@ -29,12 +30,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <small className="text sm">à vista</small>
 
         <p className="text lg green">
-          <strong>
-            {product.price.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </strong>
+          <strong>{formatCurrencyBRL(product.price)}</strong>
         </p>
 
         <small className="text sm">no PIX com 15% de desconto</small>
