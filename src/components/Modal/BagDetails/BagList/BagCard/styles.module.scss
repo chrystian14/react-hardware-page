@@ -1,5 +1,4 @@
 .bagCard {
-  // ALINHANDO PROBLEMA DE FLICKERING
   display: grid;
   grid-template-columns: auto auto 1fr auto;
   align-items: center;
@@ -38,10 +37,6 @@
 }
 
 .itemQuantity {
-  // display: flex;
-  // align-items: center;
-  // align-self: flex-start;
-  // justify-content: center;
   display: grid;
   grid-template-columns: auto 1fr 2fr 1fr;
   align-self: flex-start;
